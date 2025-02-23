@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Market Billing System</title>
+</head>
+<body>
+    Chocolates: <input type="text" id="chocolate" value="" style="margin-left: 0px; margin-bottom: 10px;"><br>
+    Biscuits: <input type="text" id="biscuit" value="" style="margin-left: 21.5px; margin-bottom: 10px;"><br>
+    Milk: <input type="text" id="milk" value="" style="margin-left: 40px; margin-bottom: 10px;"><br>
+    Bread: <input type="text" id="bread" value="" style="margin-left: 30.5px; margin-bottom: 10px;"><br>
+    
+    <button onclick="myFunction()">Submit</button>
+    <p id="Output"></p>
+    <script>
+    function myFunction() {
+      let a = document.getElementById("chocolate").value;
+      let b = document.getElementById("biscuit").value;
+      let c = document.getElementById("milk").value;
+      let d = document.getElementById("bread").value;
+      document.getElementById("Output").innerHTML 
+              = "Total Bill:"+(a*5+b*10+c*12+d*15);
+    }
+    </script>
+</body>
+</html>

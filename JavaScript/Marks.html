@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks</title>
+</head>
+<body>
+    English: <input type="text" id="english" value="" style="margin-left: 6.5px; margin-bottom: 10px;"><br>
+    Telugu: <input type="text" id="telugu" value="" style="margin-left: 9.5px; margin-bottom: 10px;"><br>
+    Maths: <input type="text" id="maths" value="" style="margin-left: 9.5px; margin-bottom: 10px;"><br>
+    Science: <input type="text" id="science" value="" style="margin-left: 0px; margin-bottom: 10px;"><br>
+    Social: <input type="text" id="social" value="" style="margin-left: 10px; margin-bottom: 10px;"><br>
+    Tamil: <input type="text" id="tamil" value="" style="margin-left: 15px; margin-bottom: 10px;"><br>
+    
+    <button onclick="myFunction()">Calculate</button>
+    <p id="sum"></p>
+    <p id="avg"></p>
+    <script>
+    function myFunction() {
+      let s1 = parseInt(document.getElementById("english").value);
+      let s2 = parseInt(document.getElementById("telugu").value);
+      let s3 = parseInt(document.getElementById("maths").value);
+      let s4 = parseInt(document.getElementById("science").value);
+      let s5 = parseInt(document.getElementById("social").value);
+      let s6 = parseInt(document.getElementById("tamil").value);
+      let sum = s1+s2+s3+s4+s5+s6;
+      let avg = sum/6;
+      document.getElementById("sum").innerHTML 
+              = "Total Marks:"+sum;
+              document.getElementById("avg").innerHTML 
+              = "Average Marks:"+avg;
+    }
+    </script>
+</body>
+</html>
