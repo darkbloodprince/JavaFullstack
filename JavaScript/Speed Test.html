@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Test</title>
+</head>
+<body>
+    Enter Speed: <input type="text" id="myText" value=""><br>
+    
+    <button onclick="myFunction()">Check</button>
+    <p id="Output"></p>
+    <script>
+    function myFunction() {
+      let x = document.getElementById("myText").value;
+      if(x >= 20 && x <= 45)
+      document.getElementById("Output").innerHTML 
+              = "Normal";
+              else if(x >= 46 && x <= 74)
+      document.getElementById("Output").innerHTML 
+              = "Moderate";
+              else if(x >= 75 && x <= 120)
+      document.getElementById("Output").innerHTML 
+              = "Danger";
+    }
+    </script>
+</body>
+</html>

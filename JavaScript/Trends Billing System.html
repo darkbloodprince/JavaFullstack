@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trends Billing System</title>
+</head>
+<body>
+    Shirt: <input type="text" id="Shirt" value="" style="margin-left: 10px; margin-bottom: 10px;"><br>
+    Pant: <input type="text" id="Pant" value="" style="margin-left: 10px; margin-bottom: 10px;"><br>
+    Shoes: <input type="text" id="Shoes" value="" style="margin-left: 0px; margin-bottom: 10px;"><br>
+    Socks: <input type="text" id="Socks" value="" style="margin-left: 0px; margin-bottom: 10px;"><br>
+    
+    <button onclick="myFunction()">Submit</button>
+    <p id="TotalBill"></p>
+    <p id="GST"></p>
+    <p id="Offer"></p>
+    <p id="GrandTotal"></p>
+    <script>
+    function myFunction() {
+      let a = document.getElementById("Shirt").value;
+      let b = document.getElementById("Pant").value;
+      let c = document.getElementById("Shoes").value;
+      let d = document.getElementById("Socks").value;
+      let total = a*500+b*1000+c*1200+d*150
+      let gst;
+      let offer;
+      document.getElementById("TotalBill").innerHTML 
+              = "Total Bill:"+total;
+              if(total >= 1000 && total <= 2000){
+                gst = 15;
+                offer = 20;
+              }
+              else if(total >= 2001 && total <= 3000){
+                gst = 16;
+                offer = 25;
+              }
+              else if(total >= 3001 && total <= 4000){
+                gst = 17;
+                offer = 30;
+              }
+              else if(total >= 4001){
+                gst = 18;
+                offer = 35;
+              }
+              else{
+                gst = 14;
+                offer = 1;
+              }
+              document.getElementById("GST").innerHTML 
+              = "GST:"+gst+"%";
+              document.getElementById("Offer").innerHTML 
+              = "Offer:"+offer+"%";
+              document.getElementById("GrandTotal").innerHTML 
+              = "Grand Total:"+(total+(total*(gst/100))-(total*(offer/100)));
+    }
+    </script>
+</body>
+</html>

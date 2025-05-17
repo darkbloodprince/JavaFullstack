@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of Odd Numbers</title>
+</head>
+<body>
+    Input: <input type="text" id="Input" value="" style="margin-left: 10px; margin-bottom: 10px;"><br>
+    
+    <button onclick="myFunction()">Sum</button>
+    <p id="Sum"></p>
+    <script>
+    function myFunction() {
+      let a = document.getElementById("Input").value;
+      let sum = 0;
+      for(let i = 1;i<=a;i++){
+        if(i%2==1){
+          sum = sum + i;
+        }
+      }
+              document.getElementById("Sum").innerHTML 
+              = "Sum of Odd Numbers of "+a+" is "+sum;
+    }
+    </script>
+</body>
+</html>

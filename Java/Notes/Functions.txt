@@ -1,0 +1,173 @@
+
+<--------------TOPICS COVERED---------------->
+
+1. Introduction to Functions and Why Functions?
+A function is a block of code that performs a specific task. Functions are used to:
+Reuse code: Avoid writing the same code repeatedly.
+Improve readability: Break down complex tasks into smaller, manageable parts.
+Modularize programs: Make debugging and maintenance easier.
+
+Example Without Functions:
+int a = 5, b = 10;
+int sum1 = a + b;
+System.out.println("Sum: " + sum1);
+
+int c = 15, d = 20;
+int sum2 = c + d;
+System.out.println("Sum: " + sum2);
+
+
+Example With Functions:
+public static int add(int x, int y) {
+    return x + y;
+}
+
+public static void main(String[] args) {
+    int sum1 = add(5, 10);
+    System.out.println("Sum: " + sum1);
+
+    int sum2 = add(15, 20);
+    System.out.println("Sum: " + sum2);
+}
+
+
+
+2. Return Type and Arguments of Functions
+Return Type: Specifies the type of value the function returns. Use void if the function does not return anything.
+Arguments: Input values passed to the function.
+
+Example:
+public static int add(int x, int y) { // int is the return type, x and y are arguments
+    return x + y;
+}
+
+
+
+3. Scope of Variables
+Block-Level Scope: Variables declared inside a block ({}) are accessible only within that block.
+Function-Level Scope: Variables declared inside a function are accessible only within that function.
+Global Variables: Variables declared outside all functions (at the class level) are accessible everywhere in the class.
+
+Example:
+public class Main {
+    static int globalVar = 10; // Global variable
+
+    public static void main(String[] args) {
+        int localVar = 20; // Function-level variable
+        if (true) {
+            int blockVar = 30; // Block-level variable
+            System.out.println(blockVar); // Accessible
+        }
+        // System.out.println(blockVar); // Error: blockVar is not accessible here
+        System.out.println(localVar); // Accessible
+        System.out.println(globalVar); // Accessible
+    }
+}
+
+
+4. Why Return from Functions?
+Functions return values to provide results to the caller.
+The return statement exits the function and optionally returns a value.
+
+Example:
+public static int square(int x) {
+    return x * x; // Return the square of x
+}
+
+public static void main(String[] args) {
+    int result = square(5); // result = 25
+    System.out.println(result);
+}
+
+
+
+
+5. Flow of Execution of Functions
+When a function is called, the program jumps to the function’s code.
+After the function completes, the program returns to the point where the function was called.
+Example:
+public static void printHello() {
+    System.out.println("Hello");
+}
+public static void main(String[] args) {
+    System.out.println("Start");
+    printHello(); // Jump to printHello()
+    System.out.println("End");
+}
+
+Output:
+Hello
+End
+
+
+
+6. Memory Mapping of Functions in Java Call Stack
+The call stack is a stack data structure that stores information about active functions (method calls). Each function call is represented by a stack frame, which contains:
+Local variables.
+Parameters.
+Return address (where to continue after the function completes).
+
+
+
+How Functions are Added to the Call Stack:
+When a function is called, a new stack frame is pushed onto the call stack.
+
+The function executes within its stack frame.
+When the function completes (either by reaching the end or encountering a return statement), its stack frame is popped from the call stack.
+Example:
+
+public static void funcA() {
+    System.out.println("Inside funcA");
+    funcB(); // Call funcB
+}
+
+public static void funcB() {
+    System.out.println("Inside funcB");
+}
+
+public static void main(String[] args) {
+    System.out.println("Start");
+    funcA(); // Call funcA
+    System.out.println("End");
+}
+Call Stack Visualization:
+
+Copy
+1. main() is called:
+   Call Stack: [main]
+
+2. funcA() is called from main():
+   Call Stack: [main, funcA]
+
+3. funcB() is called from funcA():
+   Call Stack: [main, funcA, funcB]
+
+4. funcB() completes:
+   Call Stack: [main, funcA]
+
+5. funcA() completes:
+   Call Stack: [main]
+
+6. main() completes:
+   Call Stack: []
+
+
+
+
+7. Conditions for Clearing a Function from the Call Stack
+A function is cleared from the call stack in two cases:
+
+Encountering a return statement:
+The function exits immediately, and control returns to the caller.
+
+public static int add(int x, int y) {
+    return x + y; // Function exits here
+}
+
+Reaching the end of the function:
+If there is no return statement, the function exits after executing the last line.
+
+
+public static void printHello() {
+    System.out.println("Hello"); // Function exits here
+}
