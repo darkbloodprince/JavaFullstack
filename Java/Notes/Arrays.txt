@@ -1,0 +1,128 @@
+<------------------TOPICS COVERED---------------------->
+1. Why Do We Need Arrays?
+Arrays are used to store multiple values of the same type in a single variable. Without arrays, we would need to declare multiple variables to store similar data, which is inefficient and impractical.
+
+Example Without Arrays:
+
+int num1 = 10;
+int num2 = 20;
+int num3 = 30;
+// This becomes tedious for large datasets.
+
+
+Example With Arrays:
+int[] nums = {10, 20, 30}; // Store multiple values in a single variable
+
+
+
+2. Two Ways of Creating an Array
+There are two ways to create an array in Java:
+
+a. Using new Keyword
+int[] arr = new int[5]; // Creates an array of size 5
+This creates an array of size 5 with default values (0 for int, false for boolean, null for objects).
+
+
+b. Using Array Literal
+int[] brr = {3, 4, 5}; // Creates an array with values 3, 4, 5
+This creates an array and initializes it with the specified values.
+
+
+3. Memory Representation of Arrays
+When an array is created, memory is allocated in the heap, and the array variable (e.g., arr) holds a reference to that memory location.
+
+Stack and Heap
+Stack: Stores local variables and references.
+
+Heap: Stores objects and arrays.
+
+Example:
+int[] arr = new int[3]; // Array object is created in the heap
+arr[0] = 10; // Modify the first element
+
+
+
+Memory Diagram:
+Stack:
+arr -> [reference to heap memory]
+
+Heap:
+[10, 0, 0]
+
+
+4. Length Attribute of an Array
+The length attribute of an array gives the number of elements in the array.
+
+example:
+int[] arr = {10, 20, 30};
+System.out.println(arr.length); // Output: 3
+
+
+
+5. Concept of Indexing
+Arrays are zero-indexed, meaning the first element is at index 0.
+
+The last element is at index length - 1.
+
+
+example:
+int[] arr = {10, 20, 30};
+System.out.println(arr[0]); // Output: 10 (first element)
+System.out.println(arr[2]); // Output: 30 (last element)
+
+
+
+
+6. Array Elements are in Contiguous Memory Locations
+Array elements are stored in contiguous memory locations, meaning they are stored next to each other in memory. This allows for efficient access and traversal.
+
+
+
+
+7. Traversal of an Array
+Traversal means accessing each element of the array one by one. This is typically done using a loop.
+example:
+int[] arr = {10, 20, 30};
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+
+8. arr is a Reference to an Array Object
+The variable arr is a reference to the array object created in the heap. It does not store the actual array elements.
+
+Example:
+int[] arr = {10, 20, 30};
+int[] brr = arr; // brr now references the same array as arr
+brr[0] = 100;    // Modifying brr also modifies arr
+System.out.println(arr[0]); // Output: 100
+
+
+9. Arrays.sort()
+The Arrays.sort() method is used to sort the elements of an array in ascending order.
+example:
+import java.util.Arrays;
+
+int[] arr = {30, 10, 20};
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr)); // Output: [10, 20, 30]
+
+
+10. Problem Solving with Arrays
+a. Find the Sum of All Elements in an Array
+
+int[] arr = {10, 20, 30};
+int sum = 0;
+for (int i = 0; i < arr.length; i++) {
+    sum += arr[i];
+}
+System.out.println("Sum: " + sum); // Output: 60
+b. Find the Maximum Element in an Array
+int[] arr = {10, 20, 30};
+int max = arr[0];
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+System.out.println("Max: " + max); // Output: 30
