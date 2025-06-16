@@ -1,0 +1,100 @@
+<-------------------TOPICS CONVERED----------------------->
+
+1. Variables as a Fundamental Building Block of Any Code
+A variable is a named memory location that stores data. It acts as a container for holding values that can be used and manipulated in a program.
+
+Why are variables important?
+
+They allow us to store and reuse data.
+
+They make programs dynamic and flexible.
+int age = 25; // 'age' is a variable storing the value 25
+
+
+
+2. Variables Contain Data
+Variables hold data that can be of different types, such as numbers, text, or boolean values.
+int score = 100;          // Stores an integer
+String name = "Alice";    // Stores text
+boolean isPassed = true;  // Stores true/false
+
+
+
+
+3. Declaration, Initialization, and Assignment
+Declaration: Creating a variable by specifying its type and name.
+
+Initialization: Giving a variable its first value.
+
+Assignment: Changing the value of a variable.
+
+
+
+
+3. Declaration, Initialization, and Assignment
+Declaration: Creating a variable by specifying its type and name.
+
+Initialization: Giving a variable its first value.
+
+Assignment: Changing the value of a variable.
+
+
+int x;          // Declaration
+x = 10;         // Initialization
+x = x + 5;      // Assignment (changing value)
+System.out.println(x); // Output: 15
+
+
+ 
+4. Different Data Types and Why We Need Them
+Data types define the type of data a variable can hold. Different data types are needed because:
+
+They optimize memory usage.
+
+They ensure proper operations (e.g., you can’t add a number to a text).
+
+
+5 Primitive Data Types
+Primitive data types are the most basic data types in Java. They are built into the language and take up specific amounts of memory.
+
+Data Type   Size    Description Example
+byte    1 byte  Small integer   byte b = 100;
+short   2 bytes Medium integer  short s = 5000;
+int 4 bytes Large integer   int i = 100000;
+long    8 bytes Very large integer  long l = 100L;
+float   4 bytes Decimal number (single precision)   float f = 3.14f;
+double  8 bytes Decimal number (double precision)   double d = 3.14;
+char    2 bytes Single character    char c = 'A';
+boolean 1 bit   True or false   boolean b = true;
+
+
+
+6. Implicit Type Casting
+Implicit type casting (automatic type conversion) happens when a smaller data type is assigned to a larger data type.
+int num = 10;
+double decimal = num; // Implicit casting from int to double
+System.out.println(decimal); // Output: 10.0
+
+System.out.println("The number is " + 5); // Implicit casting of 5 to String
+
+
+
+
+
+7. Order of Evaluation
+Expressions are evaluated from left to right. If there are multiple operators, they follow the rules of precedence.
+
+
+
+8. Strings and Concatenation
+Strings are written inside double quotes (" ").
+
+The + operator is used for concatenation (joining strings).
+
+
+
+String firstName = "John";
+String lastName = "Doe";
+String fullName = firstName + " " + lastName; // Concatenation
+System.out.println(fullName); // Output: John Doe
+

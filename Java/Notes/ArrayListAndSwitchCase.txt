@@ -1,0 +1,124 @@
+<---------TOPICS COVERED----------------->
+
+1. Switch Case Statement
+The switch-case statement is a control flow structure used to execute one block of code among many based on the value of an expression.
+
+Syntax:
+switch (expression) {
+    case value1:
+        // Code to execute if expression == value1
+        break;
+    case value2:
+        // Code to execute if expression == value2
+        break;
+    default:
+        // Code to execute if no case matches
+}
+
+Example:
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday"); // This will execute
+        break;
+    default:
+        System.out.println("Invalid day");
+}
+Key Points:
+break is used to exit the switch block. Without it, execution falls through to the next case.
+default is optional and runs when no case matches.
+Works with int, char, String, and enum (Java 7+ supports String).
+
+2. Ternary Operator (Conditional Operator)
+A shorthand for if-else that returns a value based on a condition.
+
+Syntax:
+variable = (condition) ? expressionIfTrue : expressionIfFalse;
+Example:
+int a = 10, b = 20;
+int max = (a > b) ? a : b; // max = 20
+Key Points:
+Useful for simple conditional assignments.
+
+Avoid nested ternary operators for readability.
+
+3. ArrayList in Java
+ArrayList is a dynamic array that grows and shrinks automatically. It is part of the java.util package.
+
+Benefits of ArrayList over Arrays:
+Dynamic Size: Automatically resizes when elements are added/removed.
+
+Built-in Methods: Provides methods like add(), remove(), get(), etc.
+
+Supports Generics: Ensures type safety (e.g., ArrayList<Integer>).
+
+Better for Frequent Insertions/Deletions: Unlike arrays, shifting elements is handled internally.
+
+How to Declare an ArrayList:
+
+import java.util.ArrayList;
+
+ArrayList<Integer> list = new ArrayList<>(); // ArrayList of integers
+ArrayList<String> names = new ArrayList<>(); // ArrayList of strings
+Common ArrayList Methods:
+Method	Description	Example
+add(value)	Adds an element at the end	list.add(10);
+add(index, value)	Inserts an element at a specific index	list.add(0, 5);
+get(index)	Returns the element at the given index	int num = list.get(0);
+set(index, value)	Updates the element at the given index	list.set(0, 100);
+size()	Returns the number of elements	int size = list.size();
+remove(index)	Removes the element at the given index	list.remove(0);
+Collections.sort(list)	Sorts the list in ascending order	Collections.sort(list);
+Printing an ArrayList:
+System.out.println(list); // Prints [5, 10, 20]
+Iterating Over an ArrayList:
+Using a Simple For Loop:
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
+}
+Using a For-Each Loop:
+for (int num : list) {
+    System.out.println(num);
+}
+4. ArrayList Capacity
+The default initial capacity of ArrayList in Java is 10.
+
+When the capacity is exceeded, the ArrayList grows by 50% (new capacity = old capacity * 1.5).
+
+Example:
+ArrayList<Integer> list = new ArrayList<>(); // Initial capacity = 10
+for (int i = 0; i < 11; i++) {
+    list.add(i); // 11th element triggers resizing (new capacity = 15)
+}
+5. Time Complexity of ArrayList Operations
+Operation	Time Complexity	Explanation
+add(value)	O(1) (Amortized)	Adding at the end is usually O(1), but resizing takes O(n).
+add(index, value)	O(n)	Requires shifting elements.
+get(index)	O(1)	Direct access using index.
+set(index, value)	O(1)	Updates the element in constant time.
+remove(index)	O(n) (except last element)	Requires shifting elements.
+remove(lastIndex)	O(1)	No shifting needed.
+Why is remove(index) O(n)?
+When an element is removed from the middle, all subsequent elements must be shifted left.
+
+Example: Removing index 2 from [10, 20, 30, 40] requires shifting 30 and 40.
+
+When is remove(index) O(1)?
+Removing the last element (list.remove(list.size() - 1)) is O(1) because no shifting is needed.
+
+Summary
+Switch-Case: Used for multi-way branching.
+
+Ternary Operator: Compact if-else replacement.
+
+ArrayList: Dynamic array with flexible size and built-in methods.
+
+Initial Capacity: Default is 10, grows by 50% when full.
+
+Time Complexity: remove(index) is O(n) except for the last element (O(1)).

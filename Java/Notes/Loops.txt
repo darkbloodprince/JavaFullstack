@@ -1,0 +1,212 @@
+<---------------------TOPICS CONVERED--------------->
+
+1. Need for Loops
+
+Loops are used to repeat a block of code multiple times. Without loops, we would have to write the same code repeatedly, which is inefficient and impractical.
+
+Example: Printing numbers from 1 to 100 without loops:
+
+System.out.println(1);
+System.out.println(2);
+// ...
+System.out.println(100); // Tedious and repetitive!
+
+
+With loops, this becomes simple:
+
+for (int i = 1; i <= 100; i++) {
+    System.out.println(i);
+}
+
+
+
+2. Increment Operators
+There are multiple ways to increment a variable:
+
+Operator    Description               Example
+i = i + 1   Adds 1 to i               i = i + 1
+i += 1      Shorthand for i = i + 1   i += 1
+i++         Post-increment (use then increment) i++
+++i         Pre-increment (increment then use)  ++i
+
+Example:
+int i = 5;
+System.out.println(i++); // Output: 5 (i becomes 6 after)
+System.out.println(++i); // Output: 7 (i becomes 7 before)
+
+
+
+
+3. Decrement Operators
+Similarly, there are multiple ways to decrement a variable:
+
+Operator        Description                            Example
+i = i - 1       Subtracts 1 from i                     i = i - 1
+i -= 1          Shorthand for i = i - 1                i -= 1
+i--             Post-decrement (use then decrement)    i--
+--i             Pre-decrement (decrement then use)     --i
+
+
+Example:
+int i = 5;
+System.out.println(i--); // Output: 5 (i becomes 4 after)
+System.out.println(--i); // Output: 3 (i becomes 3 before)
+
+
+
+
+4. For Loop Structure
+The for loop is used when the number of iterations is known.
+
+Syntax:
+for (initialization; condition; update) {
+    // Code to execute
+}
+
+Initialization: Executed once at the start (e.g., int i = 1).
+
+Condition: Checked before each iteration. If true, the loop continues.
+
+Update: Executed after each iteration (e.g., i++).
+
+
+Example:
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+// Output: 1 2 3 4 5
+
+Problem Solving with For Loops
+
+a. PrintSum10
+Print the sum of numbers from 1 to 10.
+
+int sum = 0;
+for (int i = 1; i <= 10; i++) {
+    sum += i;
+}
+System.out.println("Sum: " + sum); // Output: 55
+
+
+b. Print Numbers from 1 to 10
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i);
+}
+
+d. Sum of Natural Numbers
+Find the sum of the first n natural numbers.
+
+
+int n = 10, sum = 0;
+for (int i = 1; i <= n; i++) {
+    sum += i;
+}
+System.out.println("Sum: " + sum); // Output: 55
+
+
+
+
+6. While Loop Structure
+The while loop is used when the number of iterations is not known in advance.
+
+while (condition) {
+    // Code to execute
+}
+example
+Print all odd numbers from 1 to 20.
+
+int i = 1;
+while (i <= 20) {
+    System.out.println(i);
+    i += 2;
+}
+
+
+
+7. Problem Solving with While Loops
+
+a. Power of a Number
+Calculate x^y using a while loop.
+
+int x = 2, y = 3, result = 1;
+while (y > 0) {
+    result *= x;
+    y--;
+}
+System.out.println("Result: " + result); // Output: 8
+
+
+b. Sum of Digits of a Number
+Find the sum of digits of a number.
+int num = 123, sum = 0;
+while (num > 0) {
+    sum += num % 10;
+    num /= 10;
+}
+System.out.println("Sum of digits: " + sum); // Output: 6
+
+
+
+8. Do-While Loop Structure
+The do-while loop is similar to the while loop, but it guarantees at least one execution of the loop body.
+
+
+
+Syntax:
+
+do {
+    // Code to execute
+} while (condition);
+
+
+Example:
+int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 5);
+// Output: 1 2 3 4 5
+
+
+
+9. Problem Solving with Do-While Loops
+a. Print Numbers from 1 to 10
+int i = 1;
+do {
+    System.out.println(i);
+    i++;
+} while (i <= 10);
+
+b. Sum of Digits of a Number
+Calculate the sum of digits of a number using a do-while loop.
+
+
+int num = 123, sum = 0;
+do {
+    sum += num % 10; // Add the last digit
+    num /= 10;       // Remove the last digit
+} while (num > 0);
+System.out.println("Sum of digits: " + sum); // Output: 6
+
+
+
+3. Reverse a Number
+Reverse a given number using a do-while loop.
+
+int num = 123, reversed = 0;
+do {
+    int digit = num % 10;          // Extract the last digit
+    reversed = reversed * 10 + digit; // Append the digit to reversed
+    num /= 10;                     // Remove the last digit
+} while (num > 0);
+System.out.println("Reversed number: " + reversed); // Output: 321
+
+
+
+
+10. For vs While vs Do-While
+Feature for    Loop                         while Loop                         do-while Loop
+Use Case       Known number of iterations   Unknown number of iterations       At least one iteration
+Syntax         for(init; cond; update)      while (cond)                       do { ... } while (cond);
+Execution      Checks condition first       Checks condition first             Executes body first, then checks condition
+

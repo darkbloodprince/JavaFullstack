@@ -1,0 +1,149 @@
+<-----------------------------TOPICS COVERED---------------->
+1. Relational Operators
+2. Logical Operators
+3. Conditionals
+    a. If Statement
+    b. If-Else Statement
+    c. If-Else If-Else Ladder
+    d. Else is Optional
+    e. Else is Associated with the Nearest If
+    f. Nesting of Conditionals
+
+
+1. Relational Operators
+Relational operators are used to compare two values. The result of a relational operation is always a boolean (true or false).
+
+Operator	Description	Example	Result
+<	Less than	5 < 10	true
+<=	Less than or equal	5 <= 5	true
+>	Greater than	10 > 5	true
+>=	Greater than or equal	10 >= 10	true
+==	Equal to	5 == 5	true
+!=	Not equal to	5 != 10	true
+
+int a = 10, b = 20;
+System.out.println(a < b);  // true
+System.out.println(a == b); // false
+
+
+
+2. Logical Operators
+Logical operators are used to combine multiple conditions. They also return a boolean value.
+
+Operator	Description	              Example	   Result
+&&	Logical AND (both must be true) true && false	false
+||	Logical OR (at least one true)	`true OR false`	true
+!	Logical NOT (inverts the value)	!true	         false
+
+
+Short-Circuiting:
+In &&, if the first condition is false, the second condition is not evaluated.
+In ||, if the first condition is true, the second condition is not evaluated.
+
+
+int x = 5, y = 10;
+System.out.println(x < 10 && y > 5); // true
+System.out.println(x > 10 || y < 5); // false
+System.out.println(!(x == y));      // true
+
+
+
+3. Conditionals
+Conditionals allow us to execute code based on certain conditions.
+a. If Statement
+Executes a block of code if the condition is true.
+int age = 18;
+if (age >= 18) {
+    System.out.println("You are an adult.");
+}
+
+b. If-Else Statement
+Executes one block of code if the condition is true, and another block if it’s false.
+int marks = 45;
+if (marks >= 40) {
+    System.out.println("Pass");
+} else {
+    System.out.println("Fail");
+}
+
+
+c. If-Else If-Else Ladder
+Checks multiple conditions in sequence.
+
+int score = 85;
+if (score >= 90) {
+    System.out.println("Grade A");
+} else if (score >= 80) {
+    System.out.println("Grade B");
+} else if (score >= 70) {
+    System.out.println("Grade C");
+} else {
+    System.out.println("Grade D");
+}
+
+
+d. Else is Optional
+The else block is not mandatory. You can use only if or if-else if.
+
+int num = 10;
+if (num > 0) {
+    System.out.println("Positive");
+}
+
+
+e. Else is Associated with the Nearest If
+If there are multiple if statements, else pairs with the nearest if.
+int a = 10, b = 20;
+if (a > 5)
+    if (b > 15)
+        System.out.println("Both conditions true");
+else
+    System.out.println("This is associated with the inner if");
+
+
+f. Nesting of Conditionals
+You can nest if statements inside other if statements.
+
+int age = 20;
+boolean hasLicense = true;
+if (age >= 18) {
+    if (hasLicense) {
+        System.out.println("You can drive.");
+    } else {
+        System.out.println("You need a license.");
+    }
+} else {
+    System.out.println("You are too young to drive.");
+}
+
+
+
+4.Problem Solving
+Problem 1: Check if a number is positive, negative, or zero.
+
+int num = -5;
+if (num > 0) {
+    System.out.println("Positive");
+} else if (num < 0) {
+    System.out.println("Negative");
+} else {
+    System.out.println("Zero");
+}
+
+   
+Problem 2: Check if a character is a vowel.
+char ch = 'e';
+if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+    System.out.println("Vowel");
+} else {
+    System.out.println("Not a vowel");
+}
+
+
+Problem 4: Check if a year is a leap year.
+int year = 2024;
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+    System.out.println("Leap year");
+} else {
+    System.out.println("Not a leap year");
+}
