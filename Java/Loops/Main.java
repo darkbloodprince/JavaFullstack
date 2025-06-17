@@ -41,29 +41,6 @@ since k=1, left rotating the number one time leads to 2561.
 
 Constraints
 1 <= n,k <= 10^9*/
-import java.util.*;
-
-public class NumberRotation {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String s = sc.next();      // read the number as a string
-        long k = sc.nextLong();    // read rotations (can be large or negative)
-        sc.close();
-
-        int len = s.length();
-        // Normalize k into a right-rotation count in [0, len)
-        int r = (int)(((k % len) + len) % len);
-
-        if (r == 0) {
-            // No rotation needed
-            System.out.println(s);
-        } else {
-            // Right-rotate by r: take last r chars to front
-            String rotated = s.substring(len - r) + s.substring(0, len - r);
-            System.out.println(rotated);
-        }
-    }
-}
 
 /*Approach 1:
 Instead of rotating k times, we break the number in two parts. One that has last k elements and one that has rest of the elements. If k is bigger than number of digits or is negative, we use (k+n)%n to find the positive less than n equivalent k.
@@ -88,37 +65,49 @@ Time Complexity: O(log(n)) as we are dividing the number by 10 each time while c
 
 Space Complexity: O(1).
 
-Below is the implementation of the above idea:
-
-1. Java
+Below is the implementation of the above idea:*/
 
 import java.util.*;
 
-
 public class Main {
-
-
     public static void main(String[] args) {
 
-
-        // Write your code here
+        // Create a Scanner object for reading input
         Scanner sc = new Scanner(System.in);
+
+        // Read two integers from input: n (the number) and k (rotation count)
         int n, k;
         n = sc.nextInt();
         k = sc.nextInt();
-        int r = 0;
-        int temp = n, count = 0;
+
+        int r = 0; // r will store the result after rotation
+
+        int temp = n;
+        int count = 0;
+
+        // Step 1: Count the number of digits in n
         while (temp != 0) {
             temp /= 10;
             count++;
         }
-        k = k % count;
+
+        // Step 2: Adjust k to be within bounds of digit length
+        k = k % count; // to ensure k doesn't exceed digit length
         if (k < 0) {
-            k = count + k;
+            k = count + k; // convert negative rotation to equivalent right rotation
         }
+
+        // Step 3: Perform the rotation
+        // Get the last 'k' digits (rightmost part)
+        // Multiply it by 10^(count-k) to move those digits to the front
         r += ((n % ((int) Math.pow(10, k))) * ((int) Math.pow(10, (count - k))));
+
+        // Add the remaining digits (leftmost part) to the right of the rotated part
         r += ((n / ((int) Math.pow(10, k))));
+
+        // Step 4: Output the rotated number
         System.out.println(r);
-        sc.close();
+
+        sc.close(); // Close the scanner
     }
-}*/
+}

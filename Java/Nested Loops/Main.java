@@ -57,24 +57,33 @@ Constraints
 import java.util.Scanner;
 import java.io.*;
 
-public class Staircase {
+public class Main {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        
-        for (int i = 1; i <= n; i++) {
-            // print (n - i) spaces
-            for (int j = 0; j < n - i; j++) {
-                System.out.print(" ");
+        Scanner scn = new Scanner(System.in); // Create a Scanner object for input
+        int n = scn.nextInt(); // Read the number of rows (height of the staircase)
+
+        int space = n - 1;  // Initial number of spaces before the first #
+        int hst = 1;        // Initial number of '#' symbols in the first row
+
+        // Loop through each row from 1 to n
+        for (int row = 1; row <= n; row++) {
+
+            // Print the required number of spaces for the current row
+            for (int sp = 1; sp <= space; sp++) {
+                System.out.print(" "); // Print a space without newline
             }
-            // print i '#' characters
-            for (int k = 0; k < i; k++) {
-                System.out.print("#");
+
+            // Print the required number of '#' for the current row
+            for (int ht = 1; ht <= hst; ht++) {
+                System.out.print("#"); // Print # without newline
             }
-            // move to next line
+
+            // Move to the next line after one row is printed
             System.out.println();
+
+            // Decrease the space count and increase the # count for the next row
+            space = space - 1;
+            hst = hst + 1;
         }
-        
-        scn.close();
     }
 }
