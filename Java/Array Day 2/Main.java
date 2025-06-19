@@ -57,35 +57,60 @@ Constraints
 
 1 <= arr[i] <= 10^9
 
--10^9 <= K < 10^9*/
+-10^9 <= K < 10^9
+We will use Simple logic to solve this problem.
+
+Algorithm
+
+Rotation Function:
+
+We define a function rotateArray that takes a vector (in C++) or an array (in Java) and the rotation value k.
+Inside this function, we calculate the effective rotation amount by taking the modulo of the array size to handle cases where k is greater than the size of the array.
+If k is negative, we convert it to a positive value equivalent to rotating left.
+Reversal Technique: We use a reversal technique to perform the rotation. The steps are as follows:
+
+Reverse the entire array.
+Reverse the first k elements.
+Reverse the remaining elements.
+Time Complexity : O(n).
+
+Space Complexity : O(1).*/
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Rotatearray {
+public class Main {
 
+    // Function to rotate the array to the right by k positions
     public static void rotateArray(int[] nums, int k) {
         int n = nums.length;
 
-        // Normalize k to be within the range of [0, n-1]
-        k = k % n;
+        // To handle cases where k is larger than n
+        k %= n;
+
+        // To handle negative values of k (convert to equivalent positive rotation)
         if (k < 0) {
-            // If k is negative, convert left rotation to equivalent right rotation
-            k = k + n;
+            k += n;
         }
 
         // Reverse the entire array
         reverse(nums, 0, n - 1);
-        // Reverse first k elements
+
+        // Reverse the first k elements
         reverse(nums, 0, k - 1);
-        // Reverse remaining elements
+
+        // Reverse the remaining n - k elements
         reverse(nums, k, n - 1);
     }
 
-    private static void reverse(int[] arr, int start, int end) {
+    // Helper function to reverse a subarray from index start to end
+    public static void reverse(int[] nums, int start, int end) {
         while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+            // Swap the elements at positions start and end
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
 
+            // Move the pointers inward
             start++;
             end--;
         }
@@ -93,21 +118,28 @@ public class Rotatearray {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        // Read the number of elements in the array
         int n = scanner.nextInt();
 
+        // Create and fill the array
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
 
+        // Read the number of rotations
         int k = scanner.nextInt();
 
+        // Rotate the array to the right by k positions
         rotateArray(arr, k);
 
-        for (int num : arr) {
-            System.out.print(num + " ");
+        // Print the rotated array
+        for(int num : arr){
+            System.out.print(num + " "); 
         }
 
+        // Close the scanner to avoid memory leaks
         scanner.close();
     }
 }
