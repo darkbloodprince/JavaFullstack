@@ -42,43 +42,73 @@ There are 3 rows in the matrix. In the first row from left to right the elements
 Constraints
 1<=M<=300
 
-1<=N<=300*/
-import java.util.*;
+1<=N<=300
 
+Approach 1:
+First iterate from the first row and as it is an odd row so its elements will be printed from left to right. Next, iterate the second row, and as it is an even row, its elements will be printed from right to left. Like this, from 1 to M, every row will be iterated and elements will be printed as based on odd row or even row.
+
+Algorithm:
+
+Iterate every row from 1 till M.
+For each row check if it is an even row or an odd row.
+If it is an odd row then elements will be printed from left to right.
+If it is an even row then elements will be printed from right to left.
+
+Time Complexity:
+
+O(M*N): we go over the entire 2D Matrix.
+
+Space Complexity:
+
+O(1): constant space used.
+
+Below is the implementation of the above idea:*/
+
+import java.util.*; // Import utility package for Scanner
+
+// Class containing logic to print elements alternately
 class Solution {
-    public void printElementsAlternately(int[][] mat,int m,int n) {
-        //Write code here and print output
-        
+    public void printElementsAlternately(int[][] mat, int m, int n) {
+        // Traverse through each row
         for (int i = 0; i < m; i++) {
-            if (i % 2 == 0) { // Odd row (0-based index)
-                for (int j = 0; j < n; j++) {
-                    System.out.print(mat[i][j] + " ");
-                }
-            } else { // Even row (0-based index)
+            // For odd-indexed rows, print from right to left
+            if (i % 2 != 0) {
                 for (int j = n - 1; j >= 0; j--) {
                     System.out.print(mat[i][j] + " ");
                 }
             }
-        
-}
-
+            // For even-indexed rows, print from left to right
+            else {
+                for (int j = 0; j < n; j++) {
+                    System.out.print(mat[i][j] + " ");
+                }
+            }
+        }
     }
 }
 
 public class AlternateMannerMatrixTraversal {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-      int m, n;
-        m = sc.nextInt();
-        n = sc.nextInt();
-        int[][] mat = new int[m][n];
+        Scanner sc = new Scanner(System.in); // Create Scanner object for input
+
+        int m, n;
+        m = sc.nextInt(); // Read number of rows
+        n = sc.nextInt(); // Read number of columns
+
+        int[][] mat = new int[m][n]; // Declare a 2D array (matrix) of size m x n
+
+        // Read the matrix elements row-wise
         for (int i = 0; i < m; i++)
             for (int j = 0; j < n; j++)
                 mat[i][j] = sc.nextInt();
+
+        // Create Solution object and call the method to print elements alternately
         Solution Obj = new Solution();
-        Obj.printElementsAlternately(mat,m,n);
-       
-        sc.close();
+        Obj.printElementsAlternately(mat, m, n);
+
+        sc.close(); // Close scanner
     }
 }
 
+/*Time: O(m × n)
+Space: O(1)*/

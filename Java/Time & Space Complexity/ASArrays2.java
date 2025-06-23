@@ -34,32 +34,59 @@ There are no elements greater than 20 in array
 Constraints
 1 <= N <= 10^5
 
-1 <= arr[i] <= 10^6*/
+1 <= arr[i] <= 10^6
+
+Approach 1
+We have a variable count to counter number of elements greater than 20
+We loop over all elements and compare the value using if statements
+We update the count variable if an element greater than 20 is found
+We print the value of count
+Time Complexity
+
+O(n) as we are looping over all elements in the array, where n is the number of elements in the array
+
+Space Complexity
+
+O(1) as we are only using constant extra space and we are not using any other data structures like arrays etc.*/
+
 import java.io.*;
 import java.util.*;
 
-class ASArrays2 {
+class Main {
+
+    // Function to count elements greater than 20
     static int greater(int arr[], int N) {
-        int count = 0;
+        int sum = 0; // Variable to store the count of numbers greater than 20
+
+        // Traverse the entire array
         for (int i = 0; i < N; i++) {
             if (arr[i] > 20) {
-                count++;
+                sum++; // Increment count if element is greater than 20
             }
         }
-        return count;
+
+        return sum; // Return the final count
     }
 
     public static void main(String args[]) throws IOException {
         Scanner sc = new Scanner(System.in);
 
-        int N = sc.nextInt(); // array size
-        int arr[] = new int[N]; // creating array of size N
+        int N = sc.nextInt(); // Read the size of the array
 
+        int arr[] = new int[N]; // Declare array of size N
+
+        // Input elements into the array
         for (int i = 0; i < N; i++) {
-            arr[i] = sc.nextInt(); // taking input of array elements
+            arr[i] = sc.nextInt();
         }
 
+        // Call the function to count elements > 20
         int ans = greater(arr, N);
+
+        // Output the result
         System.out.println(ans);
     }
 }
+
+/*Time: O(N)
+Space: O(N)*/
