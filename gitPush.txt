@@ -3,6 +3,11 @@ git status
 git commit -m "Second"
 git push
 
+Git Bash path:
+cd OneDrive
+cd Desktop
+cd Java\ Fullstack
+
 Another git process seems to be running in this repository, e.g.
 an editor opened by 'git commit'. Please make sure all processes
 are terminated then try again. If it still fails, a git process
