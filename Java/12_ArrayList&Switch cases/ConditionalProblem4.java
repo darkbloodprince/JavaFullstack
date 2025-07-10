@@ -30,33 +30,56 @@ Output
 
 I don't belong here
 Constraints
-character c is always uppercase English letter.*/
-import java.util.*;
+character c is always uppercase English letter.
+Approach 1: Brute Force
+We need to first take the input character. Then using switch case and its syntax we need to make 6 cases for the given conditions in the question.
+Then finally print the sentence corresponding to particular english alphabet letter.
+
+Time Complexity
+
+O(n): for n cases.
+
+Space Complexity
+
+O(1): constant space used.
+
+Below is the implementation of the above idea:
+
+1. Java*/
+import java.util.*; // Import utility package (for Scanner class)
 
 public class ConditionalProblem4 {
     public static void main(String[] args) throws Throwable {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Create a Scanner object to read input
+
+        // Read a single character from input
+        // sc.next() returns a String; charAt(0) extracts the first character of that String
         char c = sc.next().charAt(0);
 
+        // Use a switch statement to handle different cases based on character `c`
         switch (c) {
-            case 'A':
+            case 'A': // If c is 'A'
                 System.out.println("I am the first letter");
-                break;
-            case 'B':
+                break; // Exit the switch after matching case
+
+            case 'B': // If c is 'B'
                 System.out.println("I am the second letter");
                 break;
-            case 'C':
+
+            case 'C': // If c is 'C'
                 System.out.println("I am the third letter");
                 break;
-            case 'D':
+
+            case 'D': // If c is 'D'
                 System.out.println("I am the fourth letter");
                 break;
-            case 'E':
+
+            case 'E': // If c is 'E'
                 System.out.println("I am the fifth letter");
                 break;
-            default:
+
+            default: // If c is none of the above (A–E)
                 System.out.println("I don't belong here");
-                break;
         }
     }
 }
