@@ -1,0 +1,105 @@
+Total Score :
+4.9/10
+
+Let’s see what our Mentor has to say about the Interview!
+
+The student has covered only arrays so far and is not yet fully comfortable with the syntax. He still need to study other data structures such as linked lists, stacks, and queues. Additionally, he require more practice in solving and debugging problems, and need to strengthen their understanding of Java fundamentals and time complexity concepts.For the two questions provided, student came up with the brute force approach and for implementing brute force also he was getting multiple errors.
+
+Section wise analysis
+Technical Introduction
+Close
+Average introduction with brief description of skills and experiences
+Coding Question - 1
+Close
+Feedback Parameter :
+
+Approach
+
+Could not come up with most optimal solution but discussed a working solution
+Feedback Parameter :
+
+Explanation
+
+Yes, the student explained the code well with clarity
+Feedback Parameter :
+
+Code Evaluation
+
+Code not working
+Feedback Parameter :
+
+Time taken by the student for Coding Question 1?
+
+25 to 30 mins
+Feedback Parameter :
+
+Did the student submit the most optimal solution?
+
+No
+Feedback Parameter :
+
+What was the follow-up question(s) asked for Coding Q1?
+
+How can we solve it for 4 sum
+Feedback Parameter :
+
+Was the student writing Small Pseudo Code with discussing approach?
+
+No, student didn’t write any pseudo-code while discussing the approach
+Feedback Parameter :
+
+How was the student's response to the follow-up questions for the respective Coding Q1?
+
+Not satisfactory
+Feedback Parameter :
+
+Did the student Code Quality and Organization, Relevant variable names, modular functions, and clear segmentation.?
+
+Yes
+Coding Question - 2
+Close
+Feedback Parameter :
+
+Approach
+
+Could not come up with most optimal solution but discussed a working solution
+Feedback Parameter :
+
+Explanation
+
+No, the student couldn’t properly explain the code
+Feedback Parameter :
+
+Code Evaluation
+
+Somewhat on the right path but couldn't complete
+Feedback Parameter :
+
+Time taken by the student for Coding Question 2?
+
+15 to 20 mins
+Feedback Parameter :
+
+Did the student submit the most optimal solution?
+
+No
+Feedback Parameter :
+
+What was the follow-up question(s) asked for Coding Q2?
+
+How can you generate all subarrays of the array
+Feedback Parameter :
+
+Was the student writing Small Pseudo Code with discussing approach?
+
+No, he didn’t write any pseudo-code while discussing the approach
+Feedback Parameter :
+
+How was the student's response to the follow-up questions for the respective Coding Q2?
+
+Satisfactory
+Feedback Parameter :
+
+Did the student Code Quality and Organization, Relevant variable names, modular functions, and clear segmentation
+
+Yes
